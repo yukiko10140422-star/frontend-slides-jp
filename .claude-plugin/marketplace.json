@@ -1,0 +1,29 @@
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "frontend-slides-jp",
+    "description": "Japanese-enhanced fork of frontend-slides. Japanese typography, 6 JP-optimized presets, and single-source HTML + text-selectable PDF + editable PPTX pipeline.",
+    "owner": {
+        "name": "yukiko10140422-star",
+        "url": "https://github.com/yukiko10140422-star"
+    },
+    "plugins": [
+        {
+            "name": "frontend-slides-jp",
+            "description": "Japanese-enhanced HTML presentation generator with 18 curated visual themes (12 original + 6 Japanese-optimized), full CJK typography support, single-source HTML/PDF/PPTX pipeline, and format selection at session start. Fork of zarazhangrui/frontend-slides.",
+            "source": "./plugins/frontend-slides-jp",
+            "category": "productivity",
+            "tags": [
+                "presentations",
+                "slides",
+                "html",
+                "pdf",
+                "pptx",
+                "powerpoint",
+                "japanese",
+                "cjk",
+                "typography",
+                "design"
+            ]
+        }
+    ]
+}

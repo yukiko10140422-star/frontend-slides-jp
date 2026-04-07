@@ -1,0 +1,18 @@
+{
+    "name": "a2a-slides",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "A2A deep research slides — single source (slides-data.mjs) → HTML, PDF, PPTX",
+    "scripts": {
+        "build:html": "node render-html.mjs",
+        "build:pdf": "node build-pdf.mjs",
+        "build:pptx": "node build-pptx.mjs",
+        "build": "node render-html.mjs && node build-pdf.mjs && node build-pptx.mjs",
+        "postinstall": "playwright install chromium --only-shell || playwright install chromium"
+    },
+    "dependencies": {
+        "playwright": "^1.49.0",
+        "pptxgenjs": "^3.12.0"
+    }
+}

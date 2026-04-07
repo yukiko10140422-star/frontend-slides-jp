@@ -1,0 +1,32 @@
+{
+    "name": "frontend-slides-jp",
+    "version": "2.0.0",
+    "description": "Japanese-enhanced fork of frontend-slides: full CJK typography, 6 JP-optimized presets, and single-source HTML + text-selectable PDF + editable PPTX pipeline.",
+    "author": {
+        "name": "yukiko10140422-star",
+        "url": "https://github.com/yukiko10140422-star"
+    },
+    "contributors": [
+        {
+            "name": "zarazhangrui",
+            "url": "https://github.com/zarazhangrui",
+            "note": "Original frontend-slides skill (v1.x)"
+        }
+    ],
+    "homepage": "https://github.com/yukiko10140422-star/frontend-slides-jp",
+    "repository": "https://github.com/yukiko10140422-star/frontend-slides-jp",
+    "license": "MIT",
+    "keywords": [
+        "presentations",
+        "slides",
+        "html",
+        "pdf",
+        "pptx",
+        "powerpoint",
+        "japanese",
+        "cjk",
+        "typography",
+        "design",
+        "animations"
+    ]
+}
