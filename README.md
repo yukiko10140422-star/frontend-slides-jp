@@ -21,6 +21,142 @@
 | 9 | **Markdown ソースモード** (`Mode D`) | 既存の Markdown レポートをそのままスライド化 |
 | 10 | **Obsidian Vault デプロイルール** | 成果物は必ず Vault のサブフォルダ (`03-Research/<topic>/` 等) に配置し、インデックスノートを同時生成 |
 
+## 📸 プリセット一覧 (18 種)
+
+オリジナル **12 種** + 日本語最適化 **6 種** = 合計 18 のビジュアルプリセット。各スライドの `THEME` を差し替えるだけで配色・フォント・装飾がまるごと変わります。
+
+### 🇯🇵 Japanese Presets (6) — 日本語コンテンツ向け
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/previews/13-jp-dark-luxury.png" width="100%"><br>
+<b>JP-1 Dark Luxury</b><br>
+<sub>高級・重厚・IR資料 — Shippori Mincho + Noto Sans JP</sub>
+</td>
+<td align="center" width="50%">
+<img src="docs/previews/14-jp-dark-tech.png" width="100%"><br>
+<b>JP-2 Dark Tech</b><br>
+<sub>SaaS・DX・リサーチ — Zen Kaku Gothic New + Space Grotesk</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/previews/15-jp-light-clean.png" width="100%"><br>
+<b>JP-3 Light Clean</b><br>
+<sub>コンサル・官公庁 — Noto Sans JP + Inter</sub>
+</td>
+<td align="center">
+<img src="docs/previews/16-jp-light-warm.png" width="100%"><br>
+<b>JP-4 Light Warm</b><br>
+<sub>ヘルスケア・教育・NPO — Zen Maru Gothic</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/previews/17-jp-corporate.png" width="100%"><br>
+<b>JP-5 Corporate Royal</b><br>
+<sub>企業年次報告・IR — Noto Sans JP + Inter Tabular</sub>
+</td>
+<td align="center">
+<img src="docs/previews/18-jp-dark-creative.png" width="100%"><br>
+<b>JP-6 Dark Creative</b><br>
+<sub>メディア・エンタメ — Murecho + Syne</sub>
+</td>
+</tr>
+</table>
+
+### 🌃 Dark Themes (4)
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/previews/01-bold-signal.png" width="100%"><br>
+<b>Bold Signal</b><br>
+<sub>Confident · High-Impact · Modern — Archivo Black + Space Grotesk</sub>
+</td>
+<td align="center" width="50%">
+<img src="docs/previews/02-electric-studio.png" width="100%"><br>
+<b>Electric Studio</b><br>
+<sub>Bold · Clean · High Contrast — Manrope</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/previews/03-creative-voltage.png" width="100%"><br>
+<b>Creative Voltage</b><br>
+<sub>Energetic · Retro-modern — Syne + Space Mono</sub>
+</td>
+<td align="center">
+<img src="docs/previews/04-dark-botanical.png" width="100%"><br>
+<b>Dark Botanical</b><br>
+<sub>Elegant · Sophisticated · Premium — Cormorant + IBM Plex</sub>
+</td>
+</tr>
+</table>
+
+### ☀️ Light Themes (4)
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/previews/05-notebook-tabs.png" width="100%"><br>
+<b>Notebook Tabs</b><br>
+<sub>Editorial · Tactile — Bodoni Moda + DM Sans</sub>
+</td>
+<td align="center" width="50%">
+<img src="docs/previews/06-pastel-geometry.png" width="100%"><br>
+<b>Pastel Geometry</b><br>
+<sub>Friendly · Approachable · Modern — Plus Jakarta Sans</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/previews/07-split-pastel.png" width="100%"><br>
+<b>Split Pastel</b><br>
+<sub>Playful · Modern · Friendly — Outfit</sub>
+</td>
+<td align="center">
+<img src="docs/previews/08-vintage-editorial.png" width="100%"><br>
+<b>Vintage Editorial</b><br>
+<sub>Witty · Personality-driven — Fraunces + Work Sans</sub>
+</td>
+</tr>
+</table>
+
+### ⚡ Specialty Themes (4)
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="docs/previews/09-neon-cyber.png" width="100%"><br>
+<b>Neon Cyber</b><br>
+<sub>Futuristic · Techy — Space Grotesk + JetBrains Mono</sub>
+</td>
+<td align="center" width="50%">
+<img src="docs/previews/10-terminal-green.png" width="100%"><br>
+<b>Terminal Green</b><br>
+<sub>Developer · Hacker aesthetic — JetBrains Mono</sub>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="docs/previews/11-swiss-modern.png" width="100%"><br>
+<b>Swiss Modern</b><br>
+<sub>Minimal · Bauhaus · Precise — Archivo + Nunito</sub>
+</td>
+<td align="center">
+<img src="docs/previews/12-paper-ink.png" width="100%"><br>
+<b>Paper & Ink</b><br>
+<sub>Editorial · Literary · Thoughtful — Cormorant Garamond + Source Serif</sub>
+</td>
+</tr>
+</table>
+
+> **備考**: 上記プレビューは各プリセットの「タイトルスライド」1 枚のサンプルです。実際には `title` / `agenda` / `two-col` / `kpi` / `layers` / `flow` / `phases` / `closing` など 11 種のレイアウトを同一プリセット内で組み合わせてデッキを構成します。詳細は [`STYLE_PRESETS.md`](STYLE_PRESETS.md) を参照。
+
+---
+
 ## 特徴 (継承部分 + 拡張)
 
 - **ゼロ依存** (HTML 出力) — 単一 HTML ファイル、インライン CSS/JS、npm ビルド不要
