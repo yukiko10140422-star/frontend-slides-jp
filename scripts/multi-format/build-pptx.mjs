@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const outPath = resolve(__dirname, 'A2A-deep-research.pptx');
+const outPath = resolve(__dirname, `${META.filename || 'presentation'}.pptx`);
 
 // Strip # from hex colors — PptxGenJS wants them without the prefix
 const h = (hex) => hex.replace('#', '').toUpperCase();

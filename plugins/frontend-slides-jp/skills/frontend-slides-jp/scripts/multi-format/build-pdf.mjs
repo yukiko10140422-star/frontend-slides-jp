@@ -9,11 +9,12 @@ import { chromium } from 'playwright';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { existsSync } from 'node:fs';
+import { META } from './slides-data.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const htmlPath = resolve(__dirname, 'index.html');
 const htmlUrl = pathToFileURL(htmlPath).href;
-const outPath = resolve(__dirname, 'A2A-deep-research.pdf');
+const outPath = resolve(__dirname, `${META.filename || 'presentation'}.pdf`);
 
 if (!existsSync(htmlPath)) {
     console.error('✗ index.html not found. Run: node render-html.mjs first.');

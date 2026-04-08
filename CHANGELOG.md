@@ -1,5 +1,28 @@
 # Changelog
 
+## 2.0.1 — 2026-04-08
+
+### Fixed
+
+- **PDF gradient-text leak** — Chromium's `page.pdf()` cannot properly alpha-mask
+  `background-clip: text` + `-webkit-text-fill-color: transparent`, causing the
+  gradient's background rectangle to leak as a visible navy/blue outline around
+  affected text in exported PDFs. Title slide mega titles and KPI card values
+  were impacted across all JP-2 Dark Tech presentations.
+  - Fixed by adding `@media print` overrides that fall back to solid colors
+    (`#ffffff` for titles, `var(--accent-cyan)` for KPI values).
+  - Screen/HTML view is unaffected — gradients remain intact.
+  - File: `scripts/multi-format/render-html.mjs`
+
+### Changed
+
+- **`META.filename` now drives output filenames** — `build-pdf.mjs` and
+  `build-pptx.mjs` previously hardcoded `A2A-deep-research.pdf/pptx` as output
+  names. Now they read `META.filename` from `slides-data.mjs`, so each project
+  gets properly-named output files without editing the build scripts.
+
+---
+
 ## 2.0.0 — 2026-04-07
 
 Japanese-enhanced fork of [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides).

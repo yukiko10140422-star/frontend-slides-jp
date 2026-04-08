@@ -853,6 +853,29 @@ body {
     .reveal { opacity: 1 !important; transform: none !important; }
     .slide { visibility: visible !important; }
     .slide .decor-orb, .slide .decor-orb-2 { opacity: 0.6; }
+
+    /* ----------------------------------------------------------------
+       FIX: Chromium's page.pdf() renders "background-clip: text" +
+       "-webkit-text-fill-color: transparent" as a visible BLUE/NAVY
+       RECTANGLE around the text in the exported PDF (the background
+       box leaks instead of being alpha-masked by glyph shapes).
+       In print mode we fall back to solid colors that approximate the
+       gradient's dominant hue. Screen view is unaffected.
+       ---------------------------------------------------------------- */
+    .title-slide .mega-title {
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        -webkit-text-fill-color: #ffffff !important;
+        color: #ffffff !important;
+    }
+    .kpi-card .kpi-value {
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        -webkit-text-fill-color: var(--accent-cyan) !important;
+        color: var(--accent-cyan) !important;
+    }
 }
 
 .reveal { opacity: 1; transform: none; }  /* Always visible in static export */
