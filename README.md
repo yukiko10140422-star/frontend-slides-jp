@@ -254,6 +254,28 @@ cp -r plugins/frontend-slides-jp/skills/frontend-slides-jp \
 
 ## Multi-Format Pipeline の仕組み
 
+```mermaid
+flowchart LR
+    A["📝 slides-data.mjs<br/>単一データソース<br/>(THEME + META + SLIDES)"]
+    A --> B["render-html.mjs"]
+    A --> C["build-pdf.mjs<br/>(Playwright)"]
+    A --> D["build-pptx.mjs<br/>(PptxGenJS)"]
+    B --> E["🌐 index.html<br/>ブラウザ・アニメ付き"]
+    B --> C
+    C --> F["📕 &lt;name&gt;.pdf<br/>ベクターテキスト<br/>(選択・検索可)"]
+    D --> G["📊 &lt;name&gt;.pptx<br/>ネイティブ編集可<br/>(PowerPoint)"]
+
+    classDef source fill:#00d4ff,stroke:#0077ff,color:#000,stroke-width:2px
+    classDef builder fill:#7c4dff,stroke:#5c2dcf,color:#fff,stroke-width:1px
+    classDef output fill:#ff2d9a,stroke:#cc0d7a,color:#fff,stroke-width:1px
+
+    class A source
+    class B,C,D builder
+    class E,F,G output
+```
+
+テキスト形式:
+
 ```
 slides-data.mjs                 単一データソース (THEME + META + SLIDES 配列)
        │
@@ -261,6 +283,13 @@ slides-data.mjs                 単一データソース (THEME + META + SLIDES 
        ├─→ build-pdf.mjs     → <name>.pdf       Playwright page.pdf() (本文ベクター)
        └─→ build-pptx.mjs    → <name>.pptx      PptxGenJS (ネイティブ編集可)
 ```
+
+### 設計原則
+
+1. **Single Source of Truth** — テキストを編集する場所は `slides-data.mjs` ただ一つ。3 形式すべてがここから派生
+2. **Native Elements Only** — PDF はベクターテキスト、PPTX はネイティブ shape/textbox。ラスタライズ禁止
+3. **Theme-Driven** — 色・フォントは `THEME` オブジェクトから注入。差し替えで全スライドが一新される
+4. **Print-Aware CSS** — `@media print` で PDF 固有のレンダリング差異をカバー
 
 ```bash
 # 成果物フォルダ (例: Obsidian Vault 内)
@@ -322,10 +351,15 @@ npm run build # HTML + PDF + PPTX を一括生成
 
 [CHANGELOG.md](CHANGELOG.md) を参照。
 
+## 既知の問題と回避策
+
+[KNOWN_ISSUES.md](KNOWN_ISSUES.md) に、PDF グラデーションテキスト問題・PPTX の制約・Light テーマ対応状況などをまとめています。
+
 ## 貢献
 
-Issue / PR 歓迎。特に:
+Issue / PR 歓迎。詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照。特に:
 - 日本語プリセット追加 (JP-7, JP-8...)
 - 他言語対応 (韓国語・中国語簡体字/繁体字)
 - PPTX 出力のグラデーション表現改善
 - slide type の追加
+- Light テーマ scaffold 対応
